@@ -1,7 +1,7 @@
-package com.coderhouse.desafioMySQL.controller;
+package com.coderhouse.desafioMongo.controller;
 
-import com.coderhouse.desafioMySQL.model.Producto;
-import com.coderhouse.desafioMySQL.service.ServiceProducto;
+import com.coderhouse.desafioMongo.model.Producto;
+import com.coderhouse.desafioMongo.service.ServiceProducto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +25,12 @@ public class itemsController {
     }
 
     @GetMapping("/{id}")
-    public Producto readProducto(@PathVariable Integer id){
+    public Producto readProducto(@PathVariable String id){
         return serviceProducto.readProducto(id);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteProducto(@PathVariable Integer id){
+    public String deleteProducto(@PathVariable String id){
         return serviceProducto.deleteProducto(id);
     }
 

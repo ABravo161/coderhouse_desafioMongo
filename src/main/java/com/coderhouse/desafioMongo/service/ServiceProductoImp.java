@@ -1,7 +1,7 @@
-package com.coderhouse.desafioMySQL.service;
+package com.coderhouse.desafioMongo.service;
 
-import com.coderhouse.desafioMySQL.model.Producto;
-import com.coderhouse.desafioMySQL.repository.RepositoryProductos;
+import com.coderhouse.desafioMongo.model.Producto;
+import com.coderhouse.desafioMongo.repository.RepositoryProductos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +16,10 @@ public class ServiceProductoImp implements ServiceProducto {
 
     @Override
     public List getAllProductos() {
-        List listaProductos = new ArrayList<>();
-        productos.findAll().forEach(listaProductos::add);
-        return listaProductos;
+        return productos.findAll();
+//        List listaProductos = new ArrayList<>();
+//        productos.findAll().forEach(listaProductos::add);
+//        return listaProductos;
     }
 
     @Override
@@ -28,19 +29,19 @@ public class ServiceProductoImp implements ServiceProducto {
     }
 
     @Override
-    public Producto readProducto(Integer id) {
+    public Producto readProducto(String id) {
         return productos.findById(id).get();
     }
 
     @Override
-    public Producto updateProducto(Producto producto, Integer id) {
+    public Producto updateProducto(Producto producto, String id) {
         producto.setId(id);
         productos.save(producto);
         return producto;
     }
 
     @Override
-    public String deleteProducto(Integer id) {
+    public String deleteProducto(String id) {
         productos.deleteById(id);
         return "se borro el producto";
     }

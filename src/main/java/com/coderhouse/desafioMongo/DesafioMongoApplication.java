@@ -1,13 +1,13 @@
-package com.coderhouse.desafioMySQL;
+package com.coderhouse.desafioMongo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DesafioMySqlApplication {
+public class DesafioMongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioMySqlApplication.class, args);
+		SpringApplication.run(DesafioMongoApplication.class, args);
 	}
 
 }

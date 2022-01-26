@@ -1,10 +1,10 @@
-package com.coderhouse.desafioMySQL;
+package com.coderhouse.desafioMongo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DesafioMySqlApplicationTests {
+class DesafioMongoApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,16 +1,27 @@
-package com.coderhouse.desafioMySQL.model;
+package com.coderhouse.desafioMongo.model;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "items")
+
+@Document("producto")
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String id;
     private String nombre;
     private String categoria;
     private Integer stock;
+    private Integer precio;
+
+    public Integer getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Integer precio) {
+        this.precio = precio;
+    }
+
+
 
     public Producto(){}
 
@@ -20,11 +31,11 @@ public class Producto {
         this.stock = stock;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
